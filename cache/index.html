@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link
+      rel="canonical"
+      href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/"
+    />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").then(
+            function (registration) {
+              // Registration was successful
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+            },
+            function (err) {
+              // registration failed :(
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
+  </head>
+  <body>
+    HI
+  </body>
+</html>
