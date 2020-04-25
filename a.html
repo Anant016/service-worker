@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Service Worker</title>
+</head>
+
+<body>
+    <output></output>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("sw.js")
+            .then(reg => {
+                document.querySelector('output').innerHTML = "Service Worker Registered. :" + reg;
+                console.log('Registered:' + reg)
+            })
+            .catch(err => {
+                document.querySelector('output').innerHTML = "Errrrror:" + err;
+                console.log('Errror:' + err)
+            })
+    }
+</script>
+
+</html>
